@@ -1,0 +1,4 @@
+".\Objects\reminder.obj",
+".\Objects\hwapi.obj" 
+TO ".\Objects\AnsiBelt" 
+PRINT(".\Listings\AnsiBelt.m51") RAMSIZE(256) 

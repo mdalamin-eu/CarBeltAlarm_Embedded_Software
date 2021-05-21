@@ -1,0 +1,146 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/24/2021  17:22:03  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\reminder.obj, .\Objects\hwapi.obj TO .\Objects\AnsiBelt PRINT (.\Listings\AnsiBelt
+>> .m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\reminder.obj (REMINDER)
+  .\Objects\hwapi.obj (HWAPI)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\AnsiBelt (REMINDER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0026H     UNIT         ?PR?MAIN?REMINDER
+            CODE    0826H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0832H     000BH     UNIT         ?PR?ISDRIVERSITTING?HWAPI
+            CODE    083DH     000BH     UNIT         ?PR?ISPASSENGERSITTING?HWAPI
+            CODE    0848H     000BH     UNIT         ?PR?ISPASSENGERBELTOPEN?HWAPI
+            CODE    0853H     000BH     UNIT         ?PR?ISBELTOPEN?HWAPI
+            CODE    085EH     0003H     UNIT         ?PR?SETALARMON?HWAPI
+            CODE    0861H     0003H     UNIT         ?PR?SETALARMOFF?HWAPI
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\AnsiBelt (REMINDER)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?REMINDER
+
+?PR?MAIN?REMINDER
+  +--> ?PR?ISDRIVERSITTING?HWAPI
+  +--> ?PR?ISBELTOPEN?HWAPI
+  +--> ?PR?ISPASSENGERSITTING?HWAPI
+  +--> ?PR?ISPASSENGERBELTOPEN?HWAPI
+  +--> ?PR?SETALARMON?HWAPI
+  +--> ?PR?SETALARMOFF?HWAPI
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\AnsiBelt (REMINDER)
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/24/2021  17:22:03  PAGE 2
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        REMINDER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0800H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0800H         LINE#         5
+  C:0800H         LINE#         6
+  C:0800H         LINE#         8
+  C:081CH         LINE#         9
+  C:081FH         LINE#         10
+  C:0821H         LINE#         12
+  C:0821H         LINE#         13
+  C:0824H         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        REMINDER
+
+  -------         MODULE        HWAPI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:00B0H.7       PUBLIC        ALARM_LED
+  B:0080H.1       PUBLIC        BELT
+  C:0848H         PUBLIC        isPassengerBeltOpen
+  B:0080H.2       PUBLIC        PASSENGER
+  D:0098H         PUBLIC        SCON
+  B:0080H.3       PUBLIC        PASSENGER_BELT
+  C:0832H         PUBLIC        isDriverSitting
+  D:0088H         PUBLIC        TCON
+  B:0080H.0       PUBLIC        DRIVER
+  C:0861H         PUBLIC        setAlarmOff
+  D:00C8H         PUBLIC        T2CON
+  C:083DH         PUBLIC        isPassengerSitting
+  D:00D0H         PUBLIC        PSW
+  C:0853H         PUBLIC        isBeltOpen
+  C:085EH         PUBLIC        setAlarmOn
+  -------         PROC          ISDRIVERSITTING
+  C:0832H         LINE#         18
+  C:0832H         LINE#         20
+  C:083CH         LINE#         21
+  -------         ENDPROC       ISDRIVERSITTING
+  -------         PROC          ISPASSENGERSITTING
+  C:083DH         LINE#         22
+  C:083DH         LINE#         23
+  C:0847H         LINE#         24
+  -------         ENDPROC       ISPASSENGERSITTING
+  -------         PROC          ISPASSENGERBELTOPEN
+  C:0848H         LINE#         26
+  C:0848H         LINE#         27
+  C:0852H         LINE#         28
+  -------         ENDPROC       ISPASSENGERBELTOPEN
+  -------         PROC          ISBELTOPEN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/24/2021  17:22:03  PAGE 3
+
+
+  C:0853H         LINE#         30
+  C:0853H         LINE#         31
+  C:085DH         LINE#         33
+  -------         ENDPROC       ISBELTOPEN
+  -------         PROC          SETALARMON
+  C:085EH         LINE#         37
+  C:085EH         LINE#         39
+  C:0860H         LINE#         40
+  -------         ENDPROC       SETALARMON
+  -------         PROC          SETALARMOFF
+  C:0861H         LINE#         41
+  C:0861H         LINE#         42
+  C:0863H         LINE#         43
+  -------         ENDPROC       SETALARMOFF
+  -------         ENDMOD        HWAPI
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0058H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=103
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
